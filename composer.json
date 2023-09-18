@@ -1,0 +1,11 @@
+{
+  "name": "cvy/util-wp-term",
+  "autoload": {
+    "psr-4": {
+      "Cvy\\WP\\Term\\": "src/"
+    }
+  },
+  "require": {
+    "cvy/util-wp-object": "^1"
+  }
+}
