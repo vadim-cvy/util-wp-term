@@ -21,6 +21,7 @@ class Term extends \Cvy\WP\Object\WPObject
     return $this->get_original()->name;
   }
 
+  // @todo: major; make final
   protected function get_acf_id() : string
   {
     return $this->get_taxonomy_slug() . '_' . $this->get_id();
