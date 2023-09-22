@@ -51,8 +51,21 @@ class Term extends \Cvy\WP\Object\WPObject
     delete_term_meta( $this->get_id(), $selector );
   }
 
+  /**
+   * Retrieves posts under current term.
+   *
+   * @param PostsQuery $posts_query Posts query instance (MUST NOT be executed yet).
+   * @return array Posts IDs.
+   */
   public function get_posts( PostsQuery $posts_query = null ) : array
   {
+    if ( ! $posts_query )
+    {
+      $posts_query = new PostsQuery([
+        'post_type' => 'any',
+      ]);
+    }
+
     $posts_query->patch([
       'tax_query' => [[
         'taxonomy' => $this->get_taxonomy_slug(),
