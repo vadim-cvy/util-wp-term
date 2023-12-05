@@ -33,7 +33,7 @@ class Term extends \Cvy\WP\Object\WPObject
    */
   public function get_original() : \WP_Term
   {
-    return get_term( $this->get_id(), $this->get_taxonomy_slug() );
+    return get_term( $this->get_id() );
   }
 
   public function get_meta( string $selector )
